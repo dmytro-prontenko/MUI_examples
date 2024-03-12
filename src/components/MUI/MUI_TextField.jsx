@@ -6,6 +6,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 const MUI_TextField = () => {
   return (
     <Stack direction={"column"} spacing={4}>
+      <Typography variant="h2">TextField</Typography>
       <Stack direction={"column"} spacing={2}>
         <Typography variant="h5">TextField variants</Typography>
         <Stack direction={"row"} spacing={4}>

@@ -7,6 +7,7 @@ const NavBar = () => {
       <StyledLink to="/buttons">Buttons</StyledLink>
       <StyledLink to="/text-field">TextField</StyledLink>
       <StyledLink to="/select">Select</StyledLink>
+      <StyledLink to="/radio">Radio</StyledLink>
     </SideBar>
   );
 }

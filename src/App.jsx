@@ -6,6 +6,7 @@ import MUI_Typography from "./components/MUI/MUI_Typography";
 import MUI_TextField from "./components/MUI/MUI_TextField";
 import MUI_Button from "./components/MUI/MUI_Button";
 import MUI_Select from "./components/MUI/MUI_Select";
+import MUI_Radio from "./components/MUI/MUI_Radio";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/text-field" element={<MUI_TextField />} />
         <Route path="/typography" element={<MUI_TextField />} />
         <Route path="/select" element={<MUI_Select />} />
+        <Route path="/radio" element={<MUI_Radio />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
