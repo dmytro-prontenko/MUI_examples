@@ -1,3 +1,7 @@
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+import SendIcon from "@mui/icons-material/Send";
 import {
   Button,
   ButtonGroup,
@@ -7,140 +11,146 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
-import FormatBoldIcon from "@mui/icons-material/FormatBold";
-import FormatItalicIcon from "@mui/icons-material/FormatItalic";
-import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ButtonsWrapper } from "./MUI.styled";
 
 const MUI_Button = () => {
   const [formats, SetFormats] = useState(null);
-  console.log({ formats });
 
   const handleFormatChange = (_e, updatedFormats) => {
     SetFormats(updatedFormats);
   };
+
+  useEffect(() => {
+    if (formats === null) return
+    alert(`${formats} was selected`);
+  }, [formats]);
   return (
     <Stack direction={"column"} spacing={10}>
       <Stack direction={"column"} spacing={4}>
         <Typography variant="h2">Buttons</Typography>
-        <Stack direction={"column"} spacing={4}>
-          <Typography variant="h5">Buttons variants</Typography>
-          <Stack direction={"row"} spacing={4}>
-            <Button variant="text">Text</Button>
-            <Button variant="text" href="http://google.com" target="_blank">
-              Not button(see markup)
-            </Button>
-            <Button variant="contained">Contained</Button>
-            <Button variant="outlined">Outlined</Button>
-          </Stack>
-        </Stack>
-        <Stack direction={"column"} spacing={4}>
-          <Typography variant="h5">Buttons variants with colors</Typography>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">Contained</Typography>
-            <Button variant="contained" color="primary">
-              Primary
-            </Button>
-            <Button variant="contained" color="secondary">
-              Secondary
-            </Button>
-            <Button variant="contained" color="error">
-              Error
-            </Button>
-            <Button variant="contained" color="warning">
-              Warning
-            </Button>
-            <Button variant="contained" color="info">
-              Info
-            </Button>
-            <Button variant="contained" color="success">
-              Success
-            </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">Outlined</Typography>
-            <Button variant="outlined" color="primary">
-              Primary
-            </Button>
-            <Button variant="outlined" color="secondary">
-              Secondary
-            </Button>
-            <Button variant="outlined" color="error">
-              Error
-            </Button>
-            <Button variant="outlined" color="warning">
-              Warning
-            </Button>
-            <Button variant="outlined" color="info">
-              Info
-            </Button>
-            <Button variant="outlined" color="success">
-              Success
-            </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">Text</Typography>
-            <Button variant="text" color="primary">
-              Primary
-            </Button>
-            <Button variant="text" color="secondary">
-              Secondary
-            </Button>
-            <Button variant="text" color="error">
-              Error
-            </Button>
-            <Button variant="text" color="warning">
-              Warning
-            </Button>
-            <Button variant="text" color="info">
-              Info
-            </Button>
-            <Button variant="text" color="success">
-              Success
-            </Button>
-          </Stack>
-        </Stack>
-        <Stack direction={"column"} spacing={4}>
-          <Typography variant="h5">Buttons size</Typography>
-          <Stack direction={"row"} spacing={4}>
-            <Button variant="text" size="small">
-              Text small
-            </Button>
-            <Button variant="contained" size="small">
-              Contained small
-            </Button>
-            <Button variant="outlined" size="small">
-              Outlined small
-            </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Button variant="text" size="medium">
-              Text medium
-            </Button>
-            <Button variant="contained" size="medium">
-              Contained medium
-            </Button>
-            <Button variant="outlined" size="medium">
-              Outlined medium
-            </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Button variant="text" size="large">
-              Text large
-            </Button>
-            <Button variant="contained" size="large">
-              Contained large
-            </Button>
-            <Button variant="outlined" size="large">
-              Outlined large
-            </Button>
-          </Stack>
-        </Stack>
+
+        <Typography variant="h5">Buttons variants</Typography>
+        <ButtonsWrapper>
+          <Button variant="text">Text</Button>
+          <Button variant="text" href="http://google.com" target="_blank">
+            Not button(see markup)
+          </Button>
+          <Button variant="contained">Contained</Button>
+          <Button variant="outlined">Outlined</Button>
+        </ButtonsWrapper>
+
+        <Typography variant="h5">Buttons variants with colors</Typography>
+
+        <Typography variant="subtitle1">Contained</Typography>
+        <ButtonsWrapper>
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="contained" color="error">
+            Error
+          </Button>
+          <Button variant="contained" color="warning">
+            Warning
+          </Button>
+          <Button variant="contained" color="info">
+            Info
+          </Button>
+          <Button variant="contained" color="success">
+            Success
+          </Button>
+        </ButtonsWrapper>
+
+        <Typography variant="subtitle1">Outlined</Typography>
+        <ButtonsWrapper>
+          <Button variant="outlined" color="primary">
+            Primary
+          </Button>
+          <Button variant="outlined" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="outlined" color="error">
+            Error
+          </Button>
+          <Button variant="outlined" color="warning">
+            Warning
+          </Button>
+          <Button variant="outlined" color="info">
+            Info
+          </Button>
+          <Button variant="outlined" color="success">
+            Success
+          </Button>
+        </ButtonsWrapper>
+
+        <Typography variant="subtitle1">Text</Typography>
+        <ButtonsWrapper>
+          <Button variant="text" color="primary">
+            Primary
+          </Button>
+          <Button variant="text" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="text" color="error">
+            Error
+          </Button>
+          <Button variant="text" color="warning">
+            Warning
+          </Button>
+          <Button variant="text" color="info">
+            Info
+          </Button>
+          <Button variant="text" color="success">
+            Success
+          </Button>
+        </ButtonsWrapper>
+
+        <Typography variant="h5">Buttons size</Typography>
+
+        <ButtonsWrapper>
+          <Button variant="text" size="small">
+            Text small
+          </Button>
+          <Button variant="contained" size="small">
+            Contained small
+          </Button>
+          <Button variant="outlined" size="small">
+            Outlined small
+          </Button>
+        </ButtonsWrapper>
+
+        <ButtonsWrapper>
+          <Button variant="text" size="medium">
+            Text medium
+          </Button>
+          <Button variant="contained" size="medium">
+            Contained medium
+          </Button>
+          <Button variant="outlined" size="medium">
+            Outlined medium
+          </Button>
+        </ButtonsWrapper>
+
+        <ButtonsWrapper>
+          <Button variant="text" size="large">
+            Text large
+          </Button>
+          <Button variant="contained" size="large">
+            Contained large
+          </Button>
+          <Button variant="outlined" size="large">
+            Outlined large
+          </Button>
+        </ButtonsWrapper>
+
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h5">Buttons with icons</Typography>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">startIcon</Typography>
+
+          <Typography variant="subtitle1">startIcon</Typography>
+          <ButtonsWrapper>
             <Button variant="text" color="primary" startIcon={<SendIcon />}>
               Send
             </Button>
@@ -154,9 +164,10 @@ const MUI_Button = () => {
             <Button variant="outlined" color="primary" startIcon={<SendIcon />}>
               Send
             </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">endIcon</Typography>
+          </ButtonsWrapper>
+
+          <Typography variant="subtitle1">endIcon</Typography>
+          <ButtonsWrapper>
             <Button variant="text" color="primary" endIcon={<SendIcon />}>
               Send
             </Button>
@@ -166,8 +177,9 @@ const MUI_Button = () => {
             <Button variant="outlined" color="primary" endIcon={<SendIcon />}>
               Send
             </Button>
-          </Stack>
+          </ButtonsWrapper>
         </Stack>
+
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h5">
             Icon button using &lt;IconButton with colors and sizes/&gt;
@@ -181,10 +193,12 @@ const MUI_Button = () => {
             </IconButton>
           </Stack>
         </Stack>
+
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h5">Buttons elevation</Typography>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">With elevation</Typography>
+
+          <Typography variant="subtitle1">With elevation</Typography>
+          <ButtonsWrapper>
             <Button variant="contained" color="primary">
               Primary
             </Button>
@@ -203,9 +217,10 @@ const MUI_Button = () => {
             <Button variant="contained" color="success">
               Success
             </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">Without elevation</Typography>
+          </ButtonsWrapper>
+
+          <Typography variant="subtitle1">Without elevation</Typography>
+          <ButtonsWrapper>
             <Button variant="contained" color="primary" disableElevation>
               Primary
             </Button>
@@ -224,12 +239,14 @@ const MUI_Button = () => {
             <Button variant="contained" color="success" disableElevation>
               Success
             </Button>
-          </Stack>
+          </ButtonsWrapper>
         </Stack>
+
         <Stack direction={"column"} spacing={4}>
           <Typography variant="h5">Buttons ripple(click effect)</Typography>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">With ripple</Typography>
+
+          <Typography variant="subtitle1">With ripple</Typography>
+          <ButtonsWrapper>
             <Button variant="contained" color="primary">
               Primary
             </Button>
@@ -248,64 +265,35 @@ const MUI_Button = () => {
             <Button variant="contained" color="success">
               Success
             </Button>
-          </Stack>
-          <Stack direction={"row"} spacing={4}>
-            <Typography variant="subtitle1">Without ripple</Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              disableElevation
-              disableRipple
-            >
+          </ButtonsWrapper>
+
+          <Typography variant="subtitle1">Without ripple</Typography>
+          <ButtonsWrapper>
+            <Button variant="contained" color="primary" disableRipple>
               Primary
             </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              disableElevation
-              disableRipple
-            >
+            <Button variant="contained" color="secondary" disableRipple>
               Secondary
             </Button>
-            <Button
-              variant="contained"
-              color="error"
-              disableElevation
-              disableRipple
-            >
+            <Button variant="contained" color="error" disableRipple>
               Error
             </Button>
-            <Button
-              variant="contained"
-              color="warning"
-              disableElevation
-              disableRipple
-            >
+            <Button variant="contained" color="warning" disableRipple>
               Warning
             </Button>
-            <Button
-              variant="contained"
-              color="info"
-              disableElevation
-              disableRipple
-            >
+            <Button variant="contained" color="info" disableRipple>
               Info
             </Button>
-            <Button
-              variant="contained"
-              color="success"
-              disableElevation
-              disableRipple
-            >
+            <Button variant="contained" color="success" disableRipple>
               Success
             </Button>
-          </Stack>
+          </ButtonsWrapper>
         </Stack>
+
         <Typography variant="h2">ButtonGroup</Typography>
-        <Stack direction={"row"} spacing={7}>
-          <Typography variant="subtitle1">
-            Without &lt;ButtonGroup&gt;
-          </Typography>
+
+        <Typography variant="subtitle1">Without &lt;ButtonGroup&gt;</Typography>
+        <ButtonsWrapper>
           <Stack direction={"row"}>
             <Button variant="contained">Left</Button>
             <Button variant="contained">Center</Button>
@@ -321,9 +309,10 @@ const MUI_Button = () => {
             <Button variant="text">Center</Button>
             <Button variant="text">Right</Button>
           </Stack>
-        </Stack>
-        <Stack direction={"row"} spacing={10}>
-          <Typography variant="subtitle1">With &lt;ButtonGroup&gt;</Typography>
+        </ButtonsWrapper>
+
+        <Typography variant="subtitle1">With &lt;ButtonGroup&gt;</Typography>
+        <ButtonsWrapper>
           <ButtonGroup variant="contained">
             <Button>Left</Button>
             <Button>Center</Button>
@@ -339,11 +328,12 @@ const MUI_Button = () => {
             <Button>Center</Button>
             <Button>Right</Button>
           </ButtonGroup>
-        </Stack>
-        <Stack direction={"row"} spacing={10}>
-          <Typography variant="subtitle1">
-            With &lt;ButtonGroup&gt; horizontal orientation
-          </Typography>
+        </ButtonsWrapper>
+
+        <Typography variant="subtitle1">
+          With &lt;ButtonGroup&gt; horizontal orientation
+        </Typography>
+        <ButtonsWrapper>
           <ButtonGroup variant="contained">
             <Button>Left</Button>
             <Button>Center</Button>
@@ -359,11 +349,12 @@ const MUI_Button = () => {
             <Button>Center</Button>
             <Button>Right</Button>
           </ButtonGroup>
-        </Stack>
-        <Stack direction={"row"} spacing={10}>
-          <Typography variant="subtitle1">
-            With &lt;ButtonGroup&gt; vertical orientation
-          </Typography>
+        </ButtonsWrapper>
+
+        <Typography variant="subtitle1">
+          With &lt;ButtonGroup&gt; vertical orientation
+        </Typography>
+        <ButtonsWrapper>
           <ButtonGroup variant="contained" orientation="vertical">
             <Button>Left</Button>
             <Button>Center</Button>
@@ -379,11 +370,12 @@ const MUI_Button = () => {
             <Button>Center</Button>
             <Button>Right</Button>
           </ButtonGroup>
-        </Stack>
-        <Stack direction={"row"} spacing={10}>
-          <Typography variant="subtitle1">
-            With &lt;ButtonGroup&gt; sizes
-          </Typography>
+        </ButtonsWrapper>
+
+        <Typography variant="subtitle1">
+          With &lt;ButtonGroup&gt; sizes
+        </Typography>
+        <ButtonsWrapper>
           <ButtonGroup
             variant="contained"
             color="primary"
@@ -404,9 +396,11 @@ const MUI_Button = () => {
             <Button>Center</Button>
             <Button>Right</Button>
           </ButtonGroup>
-        </Stack>
+        </ButtonsWrapper>
+
         <Typography variant="h2">ToggleButton, ToggleButtonGroup </Typography>
-        <Stack direction={"row"}>
+
+        <ButtonsWrapper>
           <ToggleButtonGroup
             aria-label="text formatting"
             value={formats}
@@ -423,7 +417,7 @@ const MUI_Button = () => {
               <FormatUnderlinedIcon />
             </ToggleButton>
           </ToggleButtonGroup>
-        </Stack>
+        </ButtonsWrapper>
       </Stack>
     </Stack>
   );

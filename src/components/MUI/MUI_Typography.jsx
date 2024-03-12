@@ -1,10 +1,11 @@
 import { Typography } from "@mui/material";
 
-const MUITypography = () => {
+const MUI_Typography = () => {
   return (
     <>
-      <Typography variant="h1" gutterBottom>H1 heading</Typography>
+      <Typography variant="h1">Heading examples</Typography>
       <Typography variant="h2">H2 heading</Typography>
+      <Typography variant="h2" gutterBottom>H2 heading with gutterBottom(margin)</Typography>
       <Typography variant="h3">H3 heading</Typography>
       <Typography variant="h4">H4 heading</Typography>
       <Typography variant="h5">H5 heading</Typography>
@@ -39,4 +40,4 @@ const MUITypography = () => {
   );
 }
 
-export default MUITypography;
+export default MUI_Typography;
