@@ -12,7 +12,16 @@ const MUI_TextField = () => {
         <Stack direction={"row"} spacing={4}>
           <Stack direction={"column"} spacing={3}>
             <Typography variant="subtitle1">Outlined</Typography>
-            <TextField label="Name" variant="outlined" />
+            <TextField
+              label="Name"
+              // placeholder="Name"
+              variant="outlined"
+              inputProps={{
+                style: {
+                  padding: "16px",
+                },
+              }}
+            />
           </Stack>
           <Stack direction={"column"} spacing={3}>
             <Typography variant="subtitle1">Filled</Typography>
